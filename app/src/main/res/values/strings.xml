@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">桌面管家</string>
+    <string name="network_error">网络中断，请检查您的网络！</string>
+</resources>
