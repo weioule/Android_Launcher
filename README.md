@@ -13,4 +13,4 @@
 
 关于系统签名可以自行百度或参考：https://blog.csdn.net/anlory/article/details/80360203
 
-代码里都有注释，详细具体请看代码，github项目地址：https://github.com/weioule/Android_Launcher.git
+代码里都有注释，详细具体请看代码
