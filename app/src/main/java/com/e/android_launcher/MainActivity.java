@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //检查默认桌面
         if (!isMainLauncher()) {
             toSetMainLauncher = true;
-            showHintDialog("请设置 " + PackageUtils.getAppName(this) + " 为始终主屏幕", null, 1);
+            showHintDialog("请设置 " + PackageUtils.getAppName(this) + " 为主屏幕", null, 1);
         } else if (toSetMainLauncher) {
             showHintDialog("请长按home键清除最近打开的所有任务，进入桌面锁定模式", null, 0);
             toSetMainLauncher = false;
