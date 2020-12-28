@@ -81,17 +81,17 @@ public class SettingUtils {
     }
 
     public static void gj(Context context, boolean t, int type) {
-        String action = "com.android.internal.intent.action.REQUEST_SHUTDOWN";
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
-            action = "android.intent.action.ACTION_REQUEST_SHUTDOWN";
+        Intent off_intent = new Intent();
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            off_intent.setAction("com.android.internal.intent.action.REQUEST_SHUTDOWN");
+        }else {
+            off_intent.setAction("android.intent.action.ACTION_REQUEST_SHUTDOWN");
         }
+        off_intent.putExtra("android.intent.extra.KEY_CONFIRM", t);
 
-        Intent shutdown = new Intent(action);
-        //其中false换成true,会弹出是否关机的确认窗口
-        shutdown.putExtra("android.intent.extra.KEY_CONFIRM", t);
-        shutdown.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(shutdown);
-
+        off_intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(off_intent);
+        
         removeTask(type);
     }
 
